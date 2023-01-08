@@ -1,0 +1,23 @@
+{% load tailwind_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% tailwind_css %}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ecommerce Website</title>
+  </head>
+
+  <body>
+    <nav class="bg-zinc-900 flex justify-between p-4 items-center">
+      <a href="/" class="text-3xl text-white font-bold">Janmor Enterprise</a>
+      <ul class="flex space-x-4">
+        <li class="text-white text-xl"><a href="/">Home</a></li>
+        <li class="text-white text-xl"><a href="/create">Add Product</a></li>
+      </ul>
+    </nav>
+    <div class="content">{% block content %} {% endblock%}</div>
+  </body>
+</html>

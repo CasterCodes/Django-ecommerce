@@ -1,0 +1,25 @@
+{% extends 'main/base.html'%} {% block content %}
+<div class="flex flex-row px-8 py-16">
+  <div class="basis-2/4">
+    <img src="{{product.image.url}}" alt="" />
+  </div>
+  <div class="basis-2/4">
+    <div class="my-4">
+      <h1 class="text-2xl font-medium text-zinc-800">{{product.name}}</h1>
+      <h2 class="text-2xl my-2 font-bold text-zinc-900">
+        Ksh {{product.price}}
+      </h2>
+      <div>
+        <button class="text-white bg-zinc-900 p-4 uppercase rounded-md w-3/4">
+          Add to cart
+        </button>
+      </div>
+    </div>
+    <hr />
+    <div class="py-4">
+      <h2 class="text-xl font-bold text-zinc-800">Product Details</h2>
+      <p class="leading-8 my-4 text-zinc-800">{{product.description}}</p>
+    </div>
+  </div>
+</div>
+{% endblock %}

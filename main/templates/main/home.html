@@ -1,0 +1,21 @@
+{% extends 'main/base.html' %} {% block content %}
+<div class="px-8">
+  <header class="my-4">
+    <h2 class="text-3xl font-bold">Featured products</h2>
+  </header>
+  <div class="grid h-fit gap-2 grid-cols-6">
+    {% for product in products %}
+    <div class="border-2 border-zinc-900 text-zinc-900 rounded-md p-2">
+      <img src="{{product.image.url}}" alt="" />
+      <div class="mt-2">
+        <a class="text-lg text-zinc-900 font-semibold" href="/{{product.id}}"
+          >{{product.name|slice:"0:40"}}...</a
+        >
+        <h3 class="font-bold text-xl">Ksh {{product.price}}</h3>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

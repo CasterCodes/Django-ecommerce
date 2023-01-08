@@ -1,0 +1,66 @@
+{% extends 'main/base.html' %} {% block content %}
+<div class="w-3/4 m-auto mt-3">
+  <h2 class="text-zinc-900 text-2xl font-semibold">Create a new product</h2>
+
+  <form
+    action="/create/"
+    method="POST"
+    enctype="multipart/form-data"
+    class="w-full padding"
+  >
+    {% csrf_token %}
+    <div class="mt-4">
+      <input
+        type="text"
+        class="w-full p-4 border-zinc-900 border-2 rounded-lg focus:outline-none"
+        name="product_name"
+        placeholder="Product name"
+      />
+    </div>
+    <div class="mt-4">
+      <input
+        type="text"
+        class="w-full p-4 border-zinc-900 border-2 rounded-lg focus:outline-none"
+        name="category"
+        placeholder="Product category"
+      />
+    </div>
+    <div class="mt-4">
+      <input
+        type="text"
+        class="w-full p-4 border-zinc-900 border-2 rounded-lg focus:outline-none"
+        name="price"
+        placeholder="Product price"
+      />
+    </div>
+    <div class="mt-4">
+      <input
+        type="file"
+        class="w-full p-4 border-zinc-900 border-2 rounded-lg focus:outline-none"
+        name="product_image"
+        placeholder="Product price"
+      />
+    </div>
+
+    <div class="mt-4">
+      <textarea
+        name="description"
+        id=""
+        class="w-full p-4 resize-none border-zinc-900 border-2 rounded-lg focus:outline-none"
+        cols="30"
+        rows="10"
+        placeholder="Product description"
+      ></textarea>
+    </div>
+
+    <div>
+      <input
+        type="submit"
+        value="Submit"
+        name="save"
+        class="w-1/2 bg-zinc-800 p-4 text-white rounded-md uppercase"
+      />
+    </div>
+  </form>
+</div>
+{% endblock %}
