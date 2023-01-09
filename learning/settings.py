@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main.apps.MainConfig',
+    'users.apps.UsersConfig',
     'tailwind',
     'theme',
     'django_browser_reload'
@@ -61,7 +62,7 @@ ROOT_URLCONF = 'learning.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

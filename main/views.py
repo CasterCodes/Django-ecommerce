@@ -4,17 +4,18 @@ from django.http import HttpResponse
 from .models import Products, Category
 from django.contrib import messages
 
+
 # Create your views here.
 
 def index(request):
     products = Products.objects.all();
 
-    return render(request, 'main/home.html', {"products": products})
+    return render(request, 'home.html', {"products": products})
    
 def product_details(request, id):
     product = Products.objects.get(id=id)
     
-    return render(request, 'main/product_details.html', {'product': product})
+    return render(request, 'product_details.html', {'product': product})
     
 def create_product(request):
 
@@ -41,4 +42,4 @@ def create_product(request):
                 messages.info(request=request, extra_tags=messages.ERROR, message='The form data failed validation. Can you please form fields')
                 return redirect(to='/create/')
 
-    return render(request, 'main/create_product.html', {} )
+    return render(request, 'create_product.html', {} )

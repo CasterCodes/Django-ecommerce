@@ -1,0 +1,55 @@
+{% extends 'base.html' %} {% block content %}
+<div class="w-1/2 mx-auto mt-8">
+  <header class="my-8">
+    <h2 class="text-3xl font-bold text-zinc-900">Sigin into your account</h2>
+  </header>
+
+  {% if messages|length > 0%}
+  <div class="bg-red-600 rounded-sm text-white p-2 m-8">
+    {% for message in messages %}
+    <h2>{{message}}</h2>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <form action="/users/signin/" method="POST" class="p-8 bg-red-700">
+    {% csrf_token %}
+
+    <div class="my-2">
+      <label
+        for="username"
+        class="block my-2 font-semibold text-zinc-900 text-2xl"
+        >Username</label
+      >
+      <input
+        type="text"
+        name="username_email"
+        id="username"
+        class="block w-full outline-none p-4 rounded-sm border-2 border-zinc-900 focus:outline-none active:outline-none"
+        placeholder="eg johndoo@gmail.com"
+      />
+    </div>
+    <div class="my-2">
+      <label
+        for="password"
+        class="block my-2 font-semibold text-zinc-900 text-2xl"
+        >Password</label
+      >
+      <input
+        type="text"
+        name="password"
+        id="password"
+        class="block w-full outline-none p-4 rounded-sm border-2 border-zinc-900 focus:outline-none active:outline-none"
+        placeholder="********"
+      />
+    </div>
+    <div class="my-2">
+      <input
+        type="submit"
+        value="Signin"
+        class="uppercase rounded-sm text-white bg-zinc-900 p-4 w-full"
+      />
+    </div>
+  </form>
+</div>
+{% endblock %}
